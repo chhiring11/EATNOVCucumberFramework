@@ -40,12 +40,14 @@ public class ProductStepDef {
     }
 
     @When("I enter my valid username and password")
-    public void enterUserNamePassword(){
-        System.out.println("I enter my valid username and password");
+    public void enterUserName(String userName){
+        System.out.println("I enter my valid username and password" + userName);
 
     }
 
-    @Then("Click the login button")
+
+
+    @Then("click the login button")
     public void clickOnLoginButton(){
         System.out.println("Click the login button");
 

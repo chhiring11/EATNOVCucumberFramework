@@ -39,9 +39,15 @@ public class ProductStepDef {
 
     }
 
-    @When("I enter my valid username and password")
+    @When("I enter my valid username {string}")
     public void enterUserName(String userName){
         System.out.println("I enter my valid username and password" + userName);
+
+    }
+
+    @When("I enter my valid password {string}")
+    public void password(String password){
+        System.out.println("I enter my valid username and password" + password);
 
     }
 

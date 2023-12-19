@@ -2,15 +2,19 @@ package stepdefinitions;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import pageobjects.AddToCartPage;
 import pageobjects.HomePage;
 import pageobjects.ProductDetailsPage;
 import pageobjects.ShippingAddressPage;
 import utils.BrowserFactory;
+import utils.GenericMethods;
 
 public class ProductStepDef {
 
@@ -70,6 +74,51 @@ public class ProductStepDef {
         System.out.println(" should see a welcome message");
 
     }
+
+
+
+
+
+    @Given("I am on shopping website")
+    public void launchWebsite(){
+        driver.get("https://magento.softwaretestingboard.com/");
+        Assert.assertTrue(driver.findElement(By.xpath("//a[@href='https://magento.softwaretestingboard.com/women.html']")).isDisplayed());
+
+    }
+
+    @When("I select a product that I want to purchase from list of products")
+    public void selectProduct(){
+        homePage.clickOnProduct();
+        Assert.assertTrue(productDetailsPage.verifyIfAddToCartButtonIsDisplayed());
+
+    }
+
+    @Then("I select size of the product that I chose")
+    public void selectSizeOfTheProduct(){
+       productDetailsPage.selectSizeOfProduct();
+        GenericMethods.pauseExecutionFor(2);
+
+    }
+
+
+
+    @And("I select color of the same product")
+    public void selectColorOfTheProduct() {
+        productDetailsPage.selectColorOfProduct();
+        GenericMethods.pauseExecutionFor(2);
+    }
+
+
+
+    @Then("I add product to the cart")
+    public void addProductToTheCart(){
+        productDetailsPage.clickOnAddToCart();
+        GenericMethods.pauseExecutionFor(2);
+        Assert.assertTrue(productDetailsPage.verifyIfUserIsAbleToAddProductToCart());
+        }
+
+
+
 
     @After
     public void tearDown(){

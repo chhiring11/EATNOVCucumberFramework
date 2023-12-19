@@ -54,14 +54,17 @@ public class ProductDetailsPage {
     }*/
 
     public void selectSizeOfProduct() {
+
         sizeOfTshirt.click();
     }
 
     public boolean verifyIfSizeIsSelected() {
+
         return sizeOfTshirt.isDisplayed();
     }
 
     public void selectColorOfProduct(){
+
         colorOfTshirt.click();
     }
 
@@ -74,13 +77,15 @@ public class ProductDetailsPage {
         GenericMethods.pauseExecutionFor(2);
     }
 public boolean verifyIfUserIsAbleToAddProductToCart(){
-        return addToCartButton.isDisplayed();
+    return addToCartButton.isDisplayed();
 }
 public void clickOnShoppingCartQuantityButton(){
-        productAddedSuccessfully.click();
+
+    productAddedSuccessfully.click();
 }
 public boolean verifyIfproductAddedSuccessfully(){
-        return productAddedSuccessfully.isDisplayed();
+
+    return productAddedSuccessfully.isDisplayed();
 }
 
 }

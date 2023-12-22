@@ -37,47 +37,43 @@ public class ProductStepDef {
 
     }
 
-    @Given("I am on the login page")
-    public void verifyUserIsOnLogInPage(){
-        System.out.println("I am on the login page");
-
-    }
-
-    @When("I enter my valid username {string}")
-    public void enterUserName(String userName){
-        System.out.println("I enter my valid username and password" + userName);
-
-    }
-
-    @When("I enter my valid password {string}")
-    public void password(String password){
-        System.out.println("I enter my valid username and password" + password);
-
-    }
-
-
-
-    @Then("click the login button")
-    public void clickOnLoginButton(){
-        System.out.println("Click the login button");
-
-    }
-
-    @Then("I should be redirected to the dashboard")
-    public void verifyUserRedirectedToLoginPage(){
-        System.out.println("I should be redirected to the dashboard");
-
-    }
-
-    @Given("I should see a welcome message")
-    public void verifyUserSeeWelcomeMessage(){
-        System.out.println(" should see a welcome message");
-
-    }
-
-
-
-
+//    @Given("I am on the login page")
+//    public void verifyUserIsOnLogInPage(){
+//        System.out.println("I am on the login page");
+//
+//    }
+//
+//    @When("I enter my valid username {string}")
+//    public void enterUserName(String userName){
+//        System.out.println("I enter my valid username and password" + userName);
+//
+//    }
+//
+//    @When("I enter my valid password {string}")
+//    public void password(String password){
+//        System.out.println("I enter my valid username and password" + password);
+//
+//    }
+//
+//
+//
+//    @Then("click the login button")
+//    public void clickOnLoginButton(){
+//        System.out.println("Click the login button");
+//
+//    }
+//
+//    @Then("I should be redirected to the dashboard")
+//    public void verifyUserRedirectedToLoginPage(){
+//        System.out.println("I should be redirected to the dashboard");
+//
+//    }
+//
+//    @Given("I should see a welcome message")
+//    public void verifyUserSeeWelcomeMessage(){
+//        System.out.println(" should see a welcome message");
+//
+//    }
 
     @Given("I am on shopping website")
     public void launchWebsite(){
@@ -111,12 +107,81 @@ public class ProductStepDef {
 
 
     @Then("I add product to the cart")
-    public void addProductToTheCart(){
+    public void verifyIfUserIsAbleToAddToCart() {
         productDetailsPage.clickOnAddToCart();
         GenericMethods.pauseExecutionFor(2);
-        Assert.assertTrue(productDetailsPage.verifyIfUserIsAbleToAddProductToCart());
-        }
+        Assert.assertTrue(productDetailsPage.verifyIfproductAddedSuccessfully());
+    }
 
+    @And("I click on add to Cart")
+    public void clickingOnAddToCart(){
+        productDetailsPage.clickOnShoppingCartButton();
+        GenericMethods.pauseExecutionFor(2);
+
+    }
+
+    @And ("I click on Proceed To Checkout")
+    public void clickingOnProceedToCheckout(){
+        productDetailsPage.clickOnProceedToCheckOutButton();
+        GenericMethods.pauseExecutionFor(2);
+    }
+
+//    @And ("I want to enter email address on shipping detail page")
+//    public void enterEmailAddress(){
+//        shippingAddressPage.enterEmailAddressField();
+//        GenericMethods.pauseExecutionFor(2);
+//    }
+//    @When("I select the added Cart")
+//    public void clickOnAddedCart(){
+//        productDetailsPage.clickOnShoppingCartButton();
+//        GenericMethods.pauseExecutionFor(2);
+//
+//    }
+
+
+
+
+
+
+
+
+//    @Given("I am on add to cart page")
+//    public void addToCartPage(){
+//        Assert.assertTrue(productDetailsPage.verifyIfUserIsAbleToAddProductToCart());
+//
+//    }
+//
+//    @When("I select add to cart page so that I can be redirected to Proceed to Checkout")
+//    public void selectAddToCartPage(){
+//        productDetailsPage.clickOnAddToCart();
+//        GenericMethods.pauseExecutionFor(2);
+//        Assert.assertTrue(productDetailsPage.verifyIfproductAddedSuccessfully());
+//    }
+
+//    @Then("I select size of the product that I chose")
+//    public void selectSizeOfTheProduct(){
+//        productDetailsPage.selectSizeOfProduct();
+//        GenericMethods.pauseExecutionFor(2);
+//
+//    }
+//
+//
+//
+//    @And("I select color of the same product")
+//    public void selectColorOfTheProduct() {
+//        productDetailsPage.selectColorOfProduct();
+//        GenericMethods.pauseExecutionFor(2);
+//    }
+//
+//
+//
+//    @Then("I add product to the cart")
+//    public void addProductToTheCart(){
+//        productDetailsPage.clickOnAddToCart();
+//        GenericMethods.pauseExecutionFor(3);
+//        Assert.assertTrue(productDetailsPage.verifyIfUserIsAbleToAddProductToCart());
+//    }
+//
 
 
 

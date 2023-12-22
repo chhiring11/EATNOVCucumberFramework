@@ -50,15 +50,15 @@ public class BaseTest {
 
     @Test(priority = 2)
     public void verifyIfProductsAreListed() {
+
         Assert.assertTrue(homePage.verifyIfProductsAreListed());
     }
 
-    @Test(priority = 3)
-    public void verifyIfAddToCartButtonIsDisplayed() {
-
-        Assert.assertTrue(homePage.verifyAddToCartButtonIsDisplayed());
-        GenericMethods.pauseExecutionFor(1);
-    }
+//    @Test(priority = 3)
+//    public void verifyIfAddToCartButtonIsDisplayed() {
+//        Assert.assertTrue(productDetailsPage.verifyIfproductAddedSuccessfully());
+//        GenericMethods.pauseExecutionFor(1);
+//    }
 
     @Test(priority = 4)
     public void verifyClickingOnProductRedirectingProductDetailsPage() {
@@ -108,13 +108,13 @@ public class BaseTest {
         GenericMethods.pauseExecutionFor(2);
     }
 
-/*@Test (priority = 11)
-public void enterAllShippingDetails(){
-    shippingAddressPage.enterEmailAddressField();
-    GenericMethods.pauseExecutionFor(2);
+    @Test (priority = 11)
+    public void enterShippingDetails(){
+        shippingAddressPage.enterEmailAddressField();
+         GenericMethods.pauseExecutionFor(2);
 
 }
-*/
+
 
 
     @AfterClass

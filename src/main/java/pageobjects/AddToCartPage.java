@@ -21,6 +21,7 @@ public class AddToCartPage {
     WebElement proceedToCheckout;
 
     public void clickOnShowCartButton() {
+
         showCartButton.click();
     }
 

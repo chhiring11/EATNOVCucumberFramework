@@ -45,6 +45,7 @@ public class ProductDetailsPage {
     }
 
     public boolean verifyIfAddToCartButtonIsDisplayed(){
+
         return addToCartButton.isDisplayed();
     }
 
@@ -77,7 +78,8 @@ public class ProductDetailsPage {
         GenericMethods.pauseExecutionFor(2);
     }
 public boolean verifyIfUserIsAbleToAddProductToCart(){
-    return addToCartButton.isDisplayed();
+
+        return addToCartButton.isDisplayed();
 }
 public void clickOnShoppingCartQuantityButton(){
 

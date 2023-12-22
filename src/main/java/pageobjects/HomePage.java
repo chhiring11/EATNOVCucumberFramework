@@ -22,10 +22,12 @@ public class HomePage {
     WebElement addToCartButton;
 
     public boolean verifyIfProductsAreListed(){
+
         return hotSellersProduct.isDisplayed();
     }
 
     public void clickOnProduct(){
+
         hotSellersProduct.click();
     }
 
